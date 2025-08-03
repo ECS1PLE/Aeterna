@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geologica);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-geologica), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+input,
+::placeholder,
+pre {
+  letter-spacing: -0.06em;
+}
