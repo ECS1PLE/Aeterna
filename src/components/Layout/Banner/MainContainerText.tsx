@@ -3,6 +3,7 @@ import SubTitle from "@/components/Layout/Banner/SubTitle";
 import UIButton from "@/components/Ui/Button";
 import IndexFooter from "@/components/Layout/Banner/Footer";
 import { Rocket } from "lucide-react";
+import React from "react";
 
 interface ContainerText {
   title?: string;
@@ -11,7 +12,7 @@ interface ContainerText {
   secondButtonText: string;
 }
 
-const ContainerText = (props) => {
+const ContainerText: React.FC<ContainerText> = (props) => {
   return (
     <>
       <BannerTitle>{props.title}</BannerTitle>
