@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geologica, Geist_Mono } from "next/font/google";
 import "./global.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geologica = Geologica({
   variable: "--font-geologica",
@@ -29,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geologica.variable} ${geistMono.variable} antialiased bg-black`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

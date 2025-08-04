@@ -10,7 +10,7 @@ const BannerTitle: React.FC<IndexInterface> = ({ children }) => {
         text-5xl
         leading-5xl
         text-white
-        max-w-[499px]
+        max-w-lg
         text-center
       "
     >

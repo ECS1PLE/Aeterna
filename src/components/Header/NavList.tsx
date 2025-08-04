@@ -6,7 +6,7 @@ interface NavListProps {
 }
 
 const NavList: React.FC<NavListProps> = ({ children }) => {
-  return <div className="flex gap-4 items-center">{children}</div>;
+  return <nav className="flex items-center">{children}</nav>;
 };
 
 export default NavList;

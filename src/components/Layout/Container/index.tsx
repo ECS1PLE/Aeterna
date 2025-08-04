@@ -4,9 +4,9 @@ interface Container {
 
 const Container: React.FC<Container> = ({ children }) => {
   return (
-    <div className="relative w-full border-l border-r border-[1px] border-solid border-neutral-800">
+    <section className="w-full border-t border-x border-solid border-neutral-800">
       {children}
-    </div>
+    </section>
   );
 };
 

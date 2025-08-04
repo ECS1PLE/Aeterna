@@ -1,19 +1,16 @@
 import React from "react";
 
-interface WorkStatusProps {
-  text: string;
-}
-
-const WorkStatus: React.FC<WorkStatusProps> = ({ text }) => {
+const Status = () => {
   return (
     <div
       className="
         flex
-        border border-[#262626]
-        rounded-[12px]
+        border border-neutral-800
+        rounded-xl
         bg-gradient-to-r from-[#1A1A1A] to-[#0B0B0B]
         items-center
-        p-4
+        px-4
+        py-3
         gap-2
         w-max
       "
@@ -29,10 +26,10 @@ const WorkStatus: React.FC<WorkStatusProps> = ({ text }) => {
         "
       />
       <p className="text-[14px] leading-[16px] tracking-[-0.4px] text-[#FAFAFA]">
-        {text}
+        Все системы работают безупречно
       </p>
     </div>
   );
 };
 
-export default WorkStatus;
+export default Status;

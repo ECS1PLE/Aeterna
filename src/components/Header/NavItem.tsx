@@ -18,8 +18,8 @@ const NavItem: React.FC<NavItemProps> = ({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <li
-      className="flex items-center gap-1 cursor-pointer"
+    <div
+      className="flex items-center gap-1 px-2"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -42,7 +42,7 @@ const NavItem: React.FC<NavItemProps> = ({
           />
         )}
       </Link>
-    </li>
+    </div>
   );
 };
 

@@ -4,10 +4,11 @@ import React from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
-  color: string;
+  color: "white" | "transparent";
+  icon?: React.ReactNode;
 }
 
-const UIButton: React.FC<ButtonProps> = ({ children, color }) => {
+const UIButton: React.FC<ButtonProps> = ({ children, color, icon }) => {
   function getBackgroundColor() {
     switch (color) {
       case "white":
@@ -30,12 +31,10 @@ const UIButton: React.FC<ButtonProps> = ({ children, color }) => {
   }
   return (
     <button
-      className={`
-        inline-flex justify-center items-center
-        py-2 px-5
-        rounded-full ${getBackgroundColor()}`}
+      className={`flex gap-2 justify-center items-center py-2 px-5 rounded-full ${getBackgroundColor()}`}
     >
-      <span className={`${getTextColor()} leading-[1]`}>{children}</span>
+      {icon && <div className={`h-5 w-5 ${getTextColor()}`}>{icon}</div>}
+      <span className={`${getTextColor()}`}>{children}</span>
     </button>
   );
 };

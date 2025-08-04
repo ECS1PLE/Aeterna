@@ -3,11 +3,13 @@
 @theme inline {
   --font-sans: var(--font-geologica);
   --font-mono: var(--font-geist-mono);
+
+  --color-aqua: #1892ea;
 }
 
 body {
+  @apply bg-black overflow-x-hidden;
   font-family: var(--font-geologica), sans-serif;
-  overflow-x: hidden;
 }
 
 h1,

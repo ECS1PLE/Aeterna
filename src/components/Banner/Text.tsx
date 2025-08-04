@@ -1,10 +1,10 @@
 import React from "react";
 
-interface BannerIndexProps {
+interface BannerTextProps {
   children: React.ReactNode;
 }
 
-const SubTitle: React.FC<BannerIndexProps> = ({ children }) => {
+const BannerText: React.FC<BannerTextProps> = ({ children }) => {
   return (
     <p
       className={`
@@ -13,7 +13,7 @@ const SubTitle: React.FC<BannerIndexProps> = ({ children }) => {
         leading-5
         text-neutral-400
         text-center
-        max-w-[717px]
+        max-w-3xl
       `}
     >
       {children}
@@ -21,4 +21,4 @@ const SubTitle: React.FC<BannerIndexProps> = ({ children }) => {
   );
 };
 
-export default SubTitle;
+export default BannerText;
