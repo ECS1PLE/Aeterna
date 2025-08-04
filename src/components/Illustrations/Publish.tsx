@@ -1,7 +1,7 @@
 const PublishIllustration = () => {
   return (
     <svg
-      width="861"
+      width="100%"
       height="472"
       viewBox="0 0 861 472"
       fill="none"

@@ -12,22 +12,26 @@ import Sphere from "./Sphere";
 const IndexQuestion = () => {
   return (
     <Container>
-      <div className="p-11 flex flex-col justify-between h-full overflow-hidden z-1">
+      {/* Сделали блок relative для ограничения вложенных absolute элементов */}
+      <div className="p-11 flex flex-col justify-between h-[514px] md:h-[514px] overflow-hidden relative z-10">
         <h2 className="text-6xl text-white leading-[60px]">
           Готовы
           <br />
           творить?
         </h2>
+
         <div className="*:w-max">
           <UIButton color="white" icon={<Rocket />}>
             Начать работу
           </UIButton>
         </div>
-        <div className="absolute top-0 left-0 w-full h-full -z-1">
-          <div className="*:absolute *:-left-32 *:-top-32">
+
+        {/* Задний фон — теперь строго внутри блока */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute -left-32 -top-32">
             <Sphere />
           </div>
-          <div className="*:absolute *:-right-32 *:-bottom-32">
+          <div className="absolute -right-32 -bottom-32">
             <Sphere />
           </div>
         </div>

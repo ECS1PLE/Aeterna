@@ -19,8 +19,10 @@ const IndexAutoAPI = () => {
             <span className="text-aqua">самых сладких снах</span>
           </ContainerHeaderTitle>
         </ContainerHeader>
-        <div className="relative *:w-full mt-8">
-          <AutoAPIIllustration />
+        <div className="relative mt-8 w-full">
+          <div className="w-full max-w-full h-auto">
+            <AutoAPIIllustration />
+          </div>
         </div>
       </ContainerWrapper>
     </Container>
