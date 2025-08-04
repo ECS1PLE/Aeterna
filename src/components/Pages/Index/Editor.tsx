@@ -24,7 +24,7 @@ const IndexEditor = () => {
         </ContainerHeader>
       </ContainerWrapper>
 
-      <div className="relative h-[400px] overflow-visible">
+      <div className="relative h-[400px] overflow-hidden">
         <div
           className="
     absolute 
