@@ -1,37 +1,112 @@
+"use client";
+
+import React, { useState } from "react";
 import Logo from "../Brand";
 import NavItem from "./NavItem";
 import NavList from "./NavList";
-import Button from "../Ui/Button";
-import { Rocket } from "lucide-react";
+import UIButton from "../Ui/Button";
+import { Rocket, Menu, X } from "lucide-react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+
   return (
-    <header className="py-7 sticky top-0 z-10">
-      <section className="flex justify-between items-center max-w-7xl mx-auto">
-        <section className="flex gap-11">
+    <header className="py-7 sticky top-0 z-20 md:bg-transparent bg-black md:bg-none">
+      <section className="flex justify-between items-center max-w-7xl mx-auto px-4">
+        <section className="flex gap-11 items-center">
           <Logo />
-          <NavList>
-            <NavItem href="/" showChevron={true}>
-              Продукция
-            </NavItem>
-            <NavItem href="/" showChevron={true}>
-              Решения
-            </NavItem>
-            <NavItem href="/" showChevron={true}>
-              Документация
-            </NavItem>
-            <NavItem href="/" showChevron={false}>
-              FAQ
-            </NavItem>
-          </NavList>
+          <div className="hidden md:flex">
+            <NavList>
+              <NavItem href="/" showChevron={true}>
+                Продукция
+              </NavItem>
+              <NavItem href="/" showChevron={true}>
+                Решения
+              </NavItem>
+              <NavItem href="/" showChevron={true}>
+                Документация
+              </NavItem>
+              <NavItem href="/" showChevron={false}>
+                FAQ
+              </NavItem>
+            </NavList>
+          </div>
         </section>
-        <section className="flex gap-3">
-          <Button color="transparent">Войти в аккаунт</Button>
-          <Button color="white" icon={<Rocket />}>
+
+        <div className="hidden md:flex gap-3">
+          <UIButton color="transparent">Войти в аккаунт</UIButton>
+          <UIButton color="white" icon={<Rocket />}>
             Начать работу
-          </Button>
-        </section>
+          </UIButton>
+        </div>
+
+        <div className="md:hidden">
+          <UIButton
+            color="white"
+            icon={isOpen ? <X size={20} /> : <Menu size={20} />}
+            onClick={toggleMenu}
+          >
+            Меню
+          </UIButton>
+        </div>
       </section>
+
+      {isOpen && (
+        <nav className="md:hidden shadow-lg">
+          <div className="flex flex-col p-4 gap-4">
+            <NavList className="flex flex-wrap justify-center gap-3 max-w-[calc(3*200px+2*12px)] mx-auto">
+              <NavItem
+                href="/"
+                showChevron={true}
+                onClick={() => setIsOpen(false)}
+              >
+                Продукция
+              </NavItem>
+              <NavItem
+                href="/"
+                showChevron={true}
+                onClick={() => setIsOpen(false)}
+              >
+                Решения
+              </NavItem>
+              <NavItem
+                href="/"
+                showChevron={true}
+                onClick={() => setIsOpen(false)}
+              >
+                Документация
+              </NavItem>
+              <NavItem
+                href="/"
+                showChevron={false}
+                onClick={() => setIsOpen(false)}
+              >
+                FAQ
+              </NavItem>
+            </NavList>
+
+            <div className="flex flex-raw gap-3 mt-4 w-[90vw]">
+              <UIButton
+                color="transparent"
+                onClick={() => setIsOpen(false)}
+                className="w-full"
+              >
+                Войти в аккаунт
+              </UIButton>
+              <UIButton
+                color="white"
+                icon={<Rocket />}
+                onClick={() => setIsOpen(false)}
+                className="w-full"
+              >
+                Начать работу
+              </UIButton>
+            </div>
+          </div>
+        </nav>
+      )}
     </header>
   );
 };

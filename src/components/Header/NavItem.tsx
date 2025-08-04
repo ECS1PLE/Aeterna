@@ -8,6 +8,7 @@ interface NavItemProps {
   href: string;
   showChevron?: boolean;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
