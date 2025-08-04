@@ -7,18 +7,17 @@ interface FooterLinkProps {
 
 const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
   return (
-    <Link href={href} passHref legacyBehavior>
-      <a
-        className="
-          tracking-[-0.4px]
-          text-[#525252]
-          hover:text-white
-          transition-colors duration-200
-          z-10
-        "
-      >
-        {children}
-      </a>
+    <Link
+      href={href}
+      className="
+        tracking-[-0.4px]
+        text-[#525252]
+        hover:text-white
+        transition-colors duration-200
+        z-10
+      "
+    >
+      {children}
     </Link>
   );
 };
