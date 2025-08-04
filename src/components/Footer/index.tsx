@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
 import Logo from "../Brand";
 import FooterText from "./FooterText";
 import WorkStatus from "./WorkStatus";
@@ -5,6 +8,19 @@ import FooterBlock from "./FooterBlock";
 import FooterLink from "./FooterLink";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const scrollToTopOrRedirect = () => {
+    if (pathname === "/") {
+      if (typeof window !== "undefined") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <div className="relative">
       <div className="hidden xl:block absolute top-0 left-1/2 w-screen border-t border-neutral-700 transform -translate-x-1/2 h-[175px]">
@@ -15,8 +31,14 @@ const Footer = () => {
         />
       </div>
       <footer className="relative py-[97px] gap-[250px] mx-auto flex">
-        <div className="flex flex-col gap-[24px] relative z-10">
-          <Logo />
+        <div className="flex flex-col gap-6 relative z-10">
+          <button
+            onClick={scrollToTopOrRedirect}
+            aria-label="Scroll to top or go home"
+            className="cursor-pointer p-0 m-0 bg-transparent border-0"
+          >
+            <Logo />
+          </button>
           <div className="flex flex-col">
             <FooterText>ООО “Тмыв”</FooterText>
             <FooterText>ИНН 228666148862</FooterText>

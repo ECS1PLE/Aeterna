@@ -1,12 +1,3 @@
-import IndexBlock from "@/components/Layout/Banner";
-import ContainerText from "./Banner/MainContainerText";
-import InfoBlock from "./Heading";
-import Category from "./Heading/Category";
-import TitleHeading from "./Heading/Title";
-import MediumInfoBlock from "./Heading/MediumHeading";
-import UIButton from "../Ui/Button";
-import { Rocket } from "lucide-react";
-
 interface Container {
   children: React.ReactNode;
 }
