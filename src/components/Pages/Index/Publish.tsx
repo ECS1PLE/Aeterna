@@ -21,8 +21,8 @@ const IndexPublish = () => {
           </ContainerHeaderTitle>
         </ContainerHeader>
       </ContainerWrapper>
-      <div className="relative h-[360px]">
-        <div className="absolute right-0 bottom-0">
+      <div className="relative h-[360px] overflow-hidden sm:overflow-visible">
+        <div className="absolute right-0 bottom-0 translate-y-[30px] sm:translate-y-0">
           <PublishIllustration />
         </div>
       </div>

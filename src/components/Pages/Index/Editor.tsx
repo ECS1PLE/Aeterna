@@ -23,8 +23,26 @@ const IndexEditor = () => {
           </ContainerHeaderTitle>
         </ContainerHeader>
       </ContainerWrapper>
-      <div className="relative h-[400px] *:h-full *:absolute *:right-0 *:bottom-0">
-        <EditorIllustration />
+
+      <div className="relative h-[400px] overflow-visible">
+        <div
+          className="
+    absolute 
+    bottom-0
+    left-[30px]
+    h-full 
+    w-[638px]
+    origin-bottom-left
+    scale-[0.77]
+
+    sm:left-auto 
+    sm:right-0
+    sm:w-auto
+    sm:scale-100
+  "
+        >
+          <EditorIllustration />
+        </div>
       </div>
     </Container>
   );

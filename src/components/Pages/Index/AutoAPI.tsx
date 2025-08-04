@@ -20,7 +20,7 @@ const IndexAutoAPI = () => {
           </ContainerHeaderTitle>
         </ContainerHeader>
         <div className="relative mt-8 w-full">
-          <div className="w-full max-w-full h-auto">
+          <div className="w-full max-w-full h-auto mt-auto">
             <AutoAPIIllustration />
           </div>
         </div>
