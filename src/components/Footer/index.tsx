@@ -26,9 +26,7 @@ const Footer = () => {
   return (
     <footer className="py-24 border-t border-neutral-700 relative pl-8 md:pl-0">
       <div className="absolute top-0 left-0 right-0 mx-auto w-screen">
-        <div className="w-full">
-          <Sphere />
-        </div>
+        <div className="w-full"></div>
       </div>
       <Wrapper>
         <div className="flex flex-col-reverse md:flex-row justify-between gap-10">

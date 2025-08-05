@@ -13,7 +13,7 @@ const Header = () => {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
-    <header className="py-7 sticky top-0 z-20 md:bg-transparent bg-black md:bg-none">
+    <header className="py-7 sticky top-0 z-20 md:bg-transparent bg-black bg-white/1 border-b border-white/15">
       <section className="flex justify-between items-center max-w-7xl mx-auto px-4">
         <section className="flex gap-11 items-center">
           <Logo />
