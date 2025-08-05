@@ -7,7 +7,6 @@ import Status from "./Status";
 import FooterBlock from "./FooterBlock";
 import FooterLink from "./FooterLink";
 import Wrapper from "../Layout/Wrapper";
-import Sphere from "./Sphere";
 
 const Footer = () => {
   const pathname = usePathname();
