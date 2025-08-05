@@ -28,9 +28,9 @@ const Header = () => {
 
   return (
     <header
-      className={`py-4 sticky top-0 z-50 ${
+      className={`py-4 sticky top-0 z-50 border-b border-white/15 ${
         isScrolled ? "bg-white/1" : "bg-transparent"
-      } md:border-b border-white/15 transition-colors duration-300`}
+      } transition-colors duration-300`}
     >
       <section className="flex justify-between items-center max-w-7xl mx-auto px-4">
         <section className="flex gap-11 items-center">
