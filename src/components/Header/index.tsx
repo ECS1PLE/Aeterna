@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../Brand";
 import NavItem from "./NavItem";
 import NavList from "./NavList";
@@ -9,11 +9,29 @@ import { Rocket, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="py-7 sticky top-0 z-20 md:bg-transparent bg-black bg-white/1 border-b border-white/15">
+    <header
+      className={`py-4 sticky top-0 z-50 ${
+        isScrolled ? "bg-white/1" : "bg-transparent"
+      } md:border-b border-white/15 transition-colors duration-300`}
+    >
       <section className="flex justify-between items-center max-w-7xl mx-auto px-4">
         <section className="flex gap-11 items-center">
           <Logo />
@@ -87,7 +105,7 @@ const Header = () => {
               </NavItem>
             </NavList>
 
-            <div className="flex flex-raw gap-3 mt-4 w-[90vw]">
+            <div className="flex flex-row gap-3 mt-4 w-[90vw]">
               <UIButton
                 color="transparent"
                 onClick={() => setIsOpen(false)}

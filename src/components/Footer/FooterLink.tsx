@@ -1,15 +1,28 @@
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 interface FooterLinkProps {
-  href: string;
+  href?: string;
   children: React.ReactNode;
+  type?: "mail" | "phone";
+  value?: string;
+  isExternal?: boolean;
 }
 
-const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
+const FooterLink: React.FC<FooterLinkProps> = ({
+  children,
+  type,
+  value,
+  isExternal = false,
+}) => {
+  const href = type === "mail" ? `mailto:${value}` : `tel:${value}`;
+
   return (
     <Link
       href={href}
       className="
+        flex items-center
+        gap-2
         tracking-[-0.4px]
         text-[#525252]
         hover:text-white
@@ -18,6 +31,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
       "
     >
       {children}
+      {isExternal && <ExternalLink size={14} className="inline-block" />}
     </Link>
   );
 };

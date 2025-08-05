@@ -68,10 +68,22 @@ const Footer = () => {
               <FooterLink href="/">Тарификация</FooterLink>
             </FooterBlock>
             <FooterBlock heading="Помощь">
-              <FooterLink href="/">support@aeterna.ru</FooterLink>
+              <FooterLink
+                type="mail"
+                value="example@mail.com"
+                isExternal={true}
+              >
+                support@aeterna.ru
+              </FooterLink>
               <FooterLink href="/">Max</FooterLink>
               <FooterLink href="/">VKontakte</FooterLink>
-              <FooterLink href="/">+7 (904) 335-67-02</FooterLink>
+              <FooterLink
+                type="phone"
+                value="+7 (904) 335-67-02"
+                isExternal={true}
+              >
+                +7 (904) 335-67-02
+              </FooterLink>
             </FooterBlock>
           </div>
         </div>
