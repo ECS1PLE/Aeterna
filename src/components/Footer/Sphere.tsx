@@ -1,7 +1,7 @@
 const Sphere = () => {
   return (
     <svg
-      width="1920"
+      width="100%"
       height="271"
       viewBox="0 0 1920 271"
       fill="none"
