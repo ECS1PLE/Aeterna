@@ -1,4 +1,3 @@
-import AutoAPIIllustration from "@/components/Illustrations/AutoAPI";
 import Container from "@/components/Layout/Container";
 import ContainerHeader from "@/components/Layout/Container/Header";
 import ContainerHeaderCategory from "@/components/Layout/Container/Header/Category";
@@ -21,8 +20,6 @@ const IndexPublish = () => {
           </ContainerHeaderTitle>
         </ContainerHeader>
       </ContainerWrapper>
-
-      {/* Иллюстрация с позиционированием справа */}
       <div className="relative h-[400px] sm:h-[472px] overflow-hidden">
         <div className="absolute bottom-0 right-[-80px] sm:right-[-40px] w-[500px] sm:w-[638px] h-full pointer-events-none">
           <PublishIllustration />
