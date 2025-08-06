@@ -107,8 +107,8 @@ const Header = () => {
       </section>
 
       {isOpen && (
-        <nav className="fixed inset-0 h-screen w-screen bg-neutral-800 z-40 flex flex-col p-4 overflow-hidden">
-          <div className="flex justify-between items-center mb-8">
+        <nav className="fixed inset-0 h-100vh w-screen bg-neutral-800 z-40 flex flex-col p-4 overflow-hidden ">
+          <div className="flex justify-between items-center mb-[48px] h-[40px]">
             <Logo />
           </div>
 
@@ -149,7 +149,7 @@ const Header = () => {
             </NavList>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 w-full max-w-xs mx-auto mb-[32px]">
+          <div className="mt-8 mb-[32px] flex flex-col gap-3 w-full max-w-xs mx-auto ">
             <UIButton
               color="transparent"
               onClick={() => setIsOpen(false)}

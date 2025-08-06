@@ -1,5 +1,4 @@
 import React from "react";
-import NavItem from "./NavItem";
 
 interface NavListProps {
   children: React.ReactNode;
