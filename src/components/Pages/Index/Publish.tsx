@@ -21,7 +21,7 @@ const IndexPublish = () => {
         </ContainerHeader>
       </ContainerWrapper>
       <div className="relative h-[400px] sm:h-[472px] overflow-hidden">
-        <div className="absolute bottom-0 right-[-80px] sm:right-[-40px] w-[500px] sm:w-[638px] h-full pointer-events-none">
+        <div className="absolute bottom-0 right-[-80px] sm:right-[-40px] w-auto pointer-events-none sm:translate-y-[210px]">
           <PublishIllustration />
         </div>
       </div>
