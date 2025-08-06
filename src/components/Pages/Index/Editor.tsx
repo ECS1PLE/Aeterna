@@ -1,3 +1,5 @@
+"use client";
+
 import EditorIllustration from "@/components/Illustrations/Editor";
 import Container from "@/components/Layout/Container";
 import ContainerHeader from "@/components/Layout/Container/Header";
