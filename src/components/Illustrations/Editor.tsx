@@ -1,6 +1,4 @@
 import React from "react";
-import Lottie from "lottie-react";
-import animationData from "../Lottie/Editor.json"; // Укажите путь к вашему JSON файлу анимации
 
 const EditorIllustration: React.FC = () => {
   return (
