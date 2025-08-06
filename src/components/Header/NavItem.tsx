@@ -9,37 +9,44 @@ interface NavItemProps {
   showChevron?: boolean;
   children: React.ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
   href,
   showChevron = false,
   children,
+  className = "",
 }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      className="flex items-center gap-1 px-2"
+      className={`flex items-center gap-1 ${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <Link
         href={href}
         className={`
-    font-geologica font-normal text-base leading-6 tracking-tight 
-    text-neutral-500 flex items-center gap-1
-    transition-colors duration-300 mt-auto mb-auto
-    ${hovered ? "text-white" : ""}
-  `}
+          font-geologica font-normal text-base leading-6 tracking-tight 
+          flex items-center gap-1
+          transition-colors duration-300 mt-auto mb-auto
+
+          ${hovered ? "text-white" : "text-neutral-300 md:text-neutral-500"}
+        `}
       >
         {children}
         {showChevron && (
           <ChevronDownIcon
             className={`
-      w-3 h-3 transition-transform duration-400 mt-auto mb-auto
-      ${hovered ? "-rotate-90 text-white" : "rotate-0 text-neutral-500"}
-    `}
+              w-3 h-3 transition-transform duration-400 mt-auto mb-auto
+              ${
+                hovered
+                  ? "-rotate-90 text-white"
+                  : "rotate-0 text-neutral-300 md:text-neutral-500"
+              }
+            `}
           />
         )}
       </Link>

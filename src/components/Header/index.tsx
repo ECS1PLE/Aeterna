@@ -14,6 +14,24 @@ const Header = () => {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+
+    if (isOpen) {
+      html.style.overflow = "hidden";
+      body.style.overflow = "hidden";
+    } else {
+      html.style.overflow = "";
+      body.style.overflow = "";
+    }
+
+    return () => {
+      html.style.overflow = "";
+      body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
@@ -28,30 +46,47 @@ const Header = () => {
 
   return (
     <header
-      className={`py-4 sticky top-0 z-50 border-b border-white/15 ${
+      className={`py-4 fixed top-0 left-0 right-0 z-50 border-b border-white/15 ${
         isScrolled ? "bg-white/1" : "bg-transparent"
       } transition-colors duration-300`}
     >
-      <section className="flex justify-between items-center max-w-7xl mx-auto px-4">
-        <section className="flex gap-11 items-center">
+      <section className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div className="flex items-center">
           <Logo />
-          <div className="hidden md:flex">
-            <NavList>
-              <NavItem href="/" showChevron={true}>
-                Продукция
-              </NavItem>
-              <NavItem href="/" showChevron={true}>
-                Решения
-              </NavItem>
-              <NavItem href="/" showChevron={true}>
-                Документация
-              </NavItem>
-              <NavItem href="/" showChevron={false}>
-                FAQ
-              </NavItem>
-            </NavList>
-          </div>
-        </section>
+        </div>
+
+        <div className="hidden md:flex gap-11 items-center">
+          <NavList>
+            <NavItem
+              href="/"
+              showChevron={true}
+              className="text-neutral-500 px-2"
+            >
+              Продукция
+            </NavItem>
+            <NavItem
+              href="/"
+              showChevron={true}
+              className="text-neutral-500 px-2"
+            >
+              Решения
+            </NavItem>
+            <NavItem
+              href="/"
+              showChevron={true}
+              className="text-neutral-500 px-2"
+            >
+              Документация
+            </NavItem>
+            <NavItem
+              href="/"
+              showChevron={false}
+              className="text-neutral-500 px-2"
+            >
+              FAQ
+            </NavItem>
+          </NavList>
+        </div>
 
         <div className="hidden md:flex gap-3">
           <UIButton color="transparent">Войти в аккаунт</UIButton>
@@ -60,22 +95,27 @@ const Header = () => {
           </UIButton>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden z-50">
           <UIButton
             color="white"
             icon={isOpen ? <X size={20} /> : <Menu size={20} />}
             onClick={toggleMenu}
           >
-            Меню
+            {isOpen ? "Закрыть" : "Меню"}
           </UIButton>
         </div>
       </section>
 
       {isOpen && (
-        <nav className="md:hidden shadow-lg">
-          <div className="flex flex-col p-4 gap-4">
-            <NavList className="flex flex-wrap justify-center gap-3 max-w-[calc(3*200px+2*12px)] mx-auto">
+        <nav className="fixed inset-0 h-screen w-screen bg-neutral-800 z-40 flex flex-col p-4 overflow-hidden">
+          <div className="flex justify-between items-center mb-8">
+            <Logo />
+          </div>
+
+          <div className="flex-grow">
+            <NavList className="flex flex-col gap-4 w-full max-w-xs text-left">
               <NavItem
+                className="text-left w-full text-neutral-300"
                 href="/"
                 showChevron={true}
                 onClick={() => setIsOpen(false)}
@@ -83,6 +123,7 @@ const Header = () => {
                 Продукция
               </NavItem>
               <NavItem
+                className="text-left w-full text-neutral-300"
                 href="/"
                 showChevron={true}
                 onClick={() => setIsOpen(false)}
@@ -90,6 +131,7 @@ const Header = () => {
                 Решения
               </NavItem>
               <NavItem
+                className="text-left w-full text-neutral-300"
                 href="/"
                 showChevron={true}
                 onClick={() => setIsOpen(false)}
@@ -97,6 +139,7 @@ const Header = () => {
                 Документация
               </NavItem>
               <NavItem
+                className="text-left w-full text-neutral-300"
                 href="/"
                 showChevron={false}
                 onClick={() => setIsOpen(false)}
@@ -104,24 +147,24 @@ const Header = () => {
                 FAQ
               </NavItem>
             </NavList>
+          </div>
 
-            <div className="flex flex-row gap-3 mt-4 w-[90vw]">
-              <UIButton
-                color="transparent"
-                onClick={() => setIsOpen(false)}
-                className="w-full"
-              >
-                Войти в аккаунт
-              </UIButton>
-              <UIButton
-                color="white"
-                icon={<Rocket />}
-                onClick={() => setIsOpen(false)}
-                className="w-full"
-              >
-                Начать работу
-              </UIButton>
-            </div>
+          <div className="mt-8 flex flex-col gap-3 w-full max-w-xs mx-auto mb-[32px]">
+            <UIButton
+              color="transparent"
+              onClick={() => setIsOpen(false)}
+              className="w-full text-neutral-300"
+            >
+              Войти в аккаунт
+            </UIButton>
+            <UIButton
+              color="white"
+              icon={<Rocket />}
+              onClick={() => setIsOpen(false)}
+              className="w-full"
+            >
+              Начать работу
+            </UIButton>
           </div>
         </nav>
       )}
