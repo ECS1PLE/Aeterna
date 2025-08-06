@@ -50,7 +50,7 @@ const Header = () => {
         isScrolled ? "bg-white/1" : "bg-transparent"
       } transition-colors duration-300`}
     >
-      <section className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <section className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Logo />
         </div>

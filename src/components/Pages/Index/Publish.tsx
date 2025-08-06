@@ -1,5 +1,3 @@
-"use client";
-
 import AutoAPIIllustration from "@/components/Illustrations/AutoAPI";
 import Container from "@/components/Layout/Container";
 import ContainerHeader from "@/components/Layout/Container/Header";
@@ -23,8 +21,10 @@ const IndexPublish = () => {
           </ContainerHeaderTitle>
         </ContainerHeader>
       </ContainerWrapper>
-      <div className="relative h-[360px] overflow-hidden sm:overflow-visible">
-        <div className="absolute right-0 bottom-0 translate-y-[30px] sm:translate-y-0 overflow-hidden">
+
+      {/* Иллюстрация с позиционированием справа */}
+      <div className="relative h-[400px] sm:h-[472px] overflow-hidden">
+        <div className="absolute bottom-0 right-[-80px] sm:right-[-40px] w-[500px] sm:w-[638px] h-full pointer-events-none">
           <PublishIllustration />
         </div>
       </div>
