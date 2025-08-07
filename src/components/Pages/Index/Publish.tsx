@@ -20,8 +20,8 @@ const IndexPublish = () => {
           </ContainerHeaderTitle>
         </ContainerHeader>
       </ContainerWrapper>
-      <div className="relative h-[400px] sm:h-[472px] overflow-hidden">
-        <div className="absolute bottom-0 right-[-80px] sm:right-[-40px] w-auto pointer-events-none sm:translate-y-[210px]">
+      <div className="relative h-[400px] sm:h-[492px] overflow-hidden">
+        <div className="h-[355px] sm:h-auto absolute translate-y-[80px] sm:translate-y-[210px] sm:bottom-[20px] right-[-80px] sm:right-[-87px] w-auto pointer-events-none">
           <PublishIllustration />
         </div>
       </div>
