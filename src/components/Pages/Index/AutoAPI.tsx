@@ -11,16 +11,18 @@ const IndexAutoAPI = () => {
   return (
     <Container>
       <ContainerWrapper>
-        <ContainerHeader>
-          <ContainerHeaderCategory icon={<Route />} text="Auto API" />
-          <ContainerHeaderTitle>
-            Хуярьте бекенд так, как снится нашему бекендеру в
-            <br />
-            <span className="text-aqua">самых сладких снах</span>
-          </ContainerHeaderTitle>
-        </ContainerHeader>
-        <div className="relative mt-8 w-full">
-          <div className="w-full max-w-full h-auto mt-auto">
+        <div className="flex flex-col sm:block h-[450px] sm:h-auto">
+          <ContainerHeader>
+            <ContainerHeaderCategory icon={<Route />} text="Auto API" />
+            <ContainerHeaderTitle>
+              Хуярьте бекенд так, как снится нашему бекендеру в
+              <br />
+              <span className="text-aqua">самых сладких снах</span>
+            </ContainerHeaderTitle>
+          </ContainerHeader>
+
+          {/* Контейнер для SVG */}
+          <div className="mt-auto mb-[40px] sm:mt-8 sm:mb-0">
             <AutoAPIIllustration />
           </div>
         </div>
