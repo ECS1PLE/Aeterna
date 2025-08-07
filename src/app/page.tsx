@@ -17,7 +17,7 @@ export default function Home() {
       <Wrapper>
         <IndexMain />
         <IndexEditor />
-        <section className="flex flex-col md:flex-row w-full">
+        <section className="flex flex-col md:flex-row w-full ">
           <IndexAutoAPI />
           <IndexQuestion />
         </section>

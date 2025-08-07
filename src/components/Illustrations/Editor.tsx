@@ -19,16 +19,28 @@ const EditorIllustration: React.FC = () => {
   }, [inView]);
 
   return (
-    <div ref={inViewRef}>
+    <div
+      ref={inViewRef}
+      className="overflow-hidden will-change-transform transform-gpu transition-opacity duration-700 ease-in-out rounded-tl-md"
+      style={{
+        width: "872px",
+        height: "100%",
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+        borderBottomLeftRadius: 0,
+      }}
+    >
       <Lottie
         lottieRef={lottieRef}
         animationData={Editor}
         autoplay={false}
         loop={false}
-        style={{
-          width: "872px",
-          height: "100%",
+        renderer="svg"
+        rendererSettings={{
+          preserveAspectRatio: "xMidYMid slice",
+          progressiveLoad: true,
         }}
+        className="w-full h-full"
       />
     </div>
   );

@@ -7,11 +7,7 @@ import AutoAPI from "../Lottie/AutoAPI.json";
 
 const AutoAPIIllustration = () => {
   const lottieRef = useRef<LottieRefCurrentProps | null>(null);
-
-  const { ref: inViewRef, inView } = useInView({
-    threshold: 0.5,
-    triggerOnce: false,
-  });
+  const { ref: inViewRef, inView } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (!lottieRef.current) return;
@@ -23,16 +19,21 @@ const AutoAPIIllustration = () => {
   }, [inView]);
 
   return (
-    <div ref={inViewRef}>
+    <div
+      ref={inViewRef}
+      className="w-full max-w-[872px] rounded-md overflow-hidden will-change-transform transform-gpu transition-opacity duration-700 ease-in-out"
+    >
       <Lottie
         lottieRef={lottieRef}
         animationData={AutoAPI}
         autoplay={false}
         loop={false}
-        style={{
-          width: "100%",
-          height: "100%",
+        renderer="svg"
+        rendererSettings={{
+          preserveAspectRatio: "xMidYMid slice",
+          progressiveLoad: true,
         }}
+        className="w-full h-full"
       />
     </div>
   );
