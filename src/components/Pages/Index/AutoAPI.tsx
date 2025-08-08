@@ -20,8 +20,6 @@ const IndexAutoAPI = () => {
               <span className="text-aqua">самых сладких снах</span>
             </ContainerHeaderTitle>
           </ContainerHeader>
-
-          {/* Контейнер для SVG */}
           <div className="mt-auto mb-[40px] sm:mt-8 sm:mb-0">
             <AutoAPIIllustration />
           </div>

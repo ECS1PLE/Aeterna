@@ -10,13 +10,7 @@
 body {
   @apply bg-black overflow-x-hidden;
   font-family: var(--font-geologica), sans-serif;
-  overflow-x: hidden;
 }
-
-html {
-  overflow-x: hidden;
-}
-
 h1,
 h2,
 h3,
@@ -30,4 +24,11 @@ input,
 ::placeholder,
 pre {
   letter-spacing: -0.06em;
+}
+
+@media (max-width: 768px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
 }
