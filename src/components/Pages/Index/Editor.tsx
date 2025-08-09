@@ -8,13 +8,12 @@ import ContainerHeaderTitle from "@/components/Layout/Container/Header/Title";
 import ContainerWrapper from "@/components/Layout/Container/Wrapper";
 import { Rocket } from "lucide-react";
 import React from "react";
+import UIButton from "@/components/Ui/Button";
+import { PenTool } from "lucide-react";
 
 const IndexEditor = () => {
   return (
-    <Container
-      borderTop={false}
-      background="linear-gradient(180deg, #0A0A0A 0%, #000000 100%)"
-    >
+    <Container>
       <ContainerWrapper>
         <ContainerHeader>
           <ContainerHeaderCategory
@@ -29,7 +28,16 @@ const IndexEditor = () => {
         </ContainerHeader>
       </ContainerWrapper>
 
-      <div className="relative h-[400px] overflow-hidden">
+      <div className="relative h-[400px] overflow-hidden pl-8 flex flex-col">
+        {" "}
+        {/* Добавлено flex и flex-col */}
+        <UIButton
+          color="white"
+          icon={<PenTool />}
+          className=" mt-0 w-[174px] sm:mt-auto mb-0 sm:mb-[32px] "
+        >
+          О Редакторе
+        </UIButton>
         <div
           className="
             absolute 
@@ -39,7 +47,6 @@ const IndexEditor = () => {
             w-[638px]
             origin-bottom-left
             scale-[0.77]
-
             sm:left-auto 
             sm:right-0
             sm:w-auto
