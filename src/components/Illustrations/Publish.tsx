@@ -7,10 +7,17 @@ import Publish from "../Lottie/Deploy.json";
 
 const PublishIllustration = () => {
   const lottieRef = useRef<LottieRefCurrentProps | null>(null);
-  const { ref: inViewRef, inView } = useInView({ threshold: 0.5 });
+
+  const { ref: inViewRef, inView } = useInView({
+    threshold: 0.4,
+    rootMargin: "1px 0px 1px 0px",
+    triggerOnce: false,
+    initialInView: true,
+  });
 
   useEffect(() => {
     if (!lottieRef.current) return;
+
     if (inView) {
       lottieRef.current.play();
     } else {
@@ -25,11 +32,7 @@ const PublishIllustration = () => {
         animationData={Publish}
         autoplay={false}
         loop={false}
-        style={{
-          width: "100%",
-          height: "100%",
-          transform: "scale(0.68)",
-        }}
+        className="w-full h-full scale-100 sm:scale-[0.69] origin-center"
       />
     </div>
   );
