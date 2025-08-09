@@ -47,7 +47,7 @@ const Footer = () => {
             </FooterText>
             <Status />
           </div>
-          <div className="flex flex-col md:flex-row gap-8 relative z-10 flex-1 justify-between">
+          <div className="flex flex-col md:flex-row gap-8 relative z-10 flex-1 2xl:justify-between">
             <FooterBlock heading="Ресурсы">
               <FooterLink href="/">Политика конфиденциальности</FooterLink>
               <FooterLink href="/">Публичная оферта</FooterLink>
