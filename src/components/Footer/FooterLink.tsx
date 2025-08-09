@@ -23,6 +23,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
         ? `mailto:${value}`
         : `tel:${value}`
       : undefined);
+
   return linkHref ? (
     <Link
       href={linkHref}
@@ -34,6 +35,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
         hover:text-white
         transition-colors duration-200
         z-10
+        whitespace-nowrap
       "
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
@@ -42,7 +44,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
       {isExternal && <ExternalLink size={14} className="inline-block" />}
     </Link>
   ) : (
-    <span className="flex items-center gap-2 tracking-[-0.4px] text-[#525252] z-10">
+    <span className="flex items-center gap-2 tracking-[-0.4px] text-[#525252] z-10 whitespace-nowrap">
       {children}
     </span>
   );

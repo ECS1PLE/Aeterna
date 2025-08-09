@@ -21,10 +21,8 @@ const EditorIllustration: React.FC = () => {
   return (
     <div
       ref={inViewRef}
-      className="overflow-hidden will-change-transform transform-gpu transition-opacity duration-700 ease-in-out rounded-tl-md"
+      className="overflow-hidden will-change-transform transform-gpu transition-opacity duration-700 ease-in-out rounded-tl-md w-[872px] h-[100%]"
       style={{
-        width: "872px",
-        height: "100%",
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
         borderBottomLeftRadius: 0,
