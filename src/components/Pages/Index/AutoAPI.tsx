@@ -10,7 +10,7 @@ import React from "react";
 const IndexAutoAPI = () => {
   return (
     <Container
-      borderTop={false}
+      borderTop={true}
       borderBottom={false}
       background="linear-gradient(180deg, #0A0A0A 0%, #000000 100%)"
     >

@@ -161,7 +161,7 @@ const Header = () => {
               </NavList>
             </div>
 
-            <div className="mt-8 mb-[16px] flex flex-col gap-3 w-full max-w-[100%] px-4 mx-auto ">
+            <div className="mt-8 mb-[16px] flex flex-col gap-3 w-full max-w-[100%] mx-auto ">
               <UIButton
                 color="transparent"
                 onClick={() => setIsOpen(false)}

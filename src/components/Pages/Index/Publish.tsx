@@ -9,7 +9,7 @@ import PublishIllustration from "@/components/Illustrations/Publish";
 
 const IndexPublish = () => {
   return (
-    <Container>
+    <Container borderBottom={true} borderTop={true}>
       <ContainerWrapper>
         <ContainerHeader>
           <ContainerHeaderCategory icon={<Route />} text="Aeterna Publish" />

@@ -1,4 +1,5 @@
 import Wrapper from "@/components/Layout/Wrapper";
+import SectionWithDashed from "@/components/Layout/SectionWithDashed";
 import IndexMain from "@/components/Pages/Index/Main";
 import IndexEditor from "@/components/Pages/Index/Editor";
 import IndexAutoAPI from "@/components/Pages/Index/AutoAPI";
@@ -15,16 +16,30 @@ export default function Home() {
   return (
     <>
       <Wrapper>
-        <IndexMain />
-        <IndexEditor />
-        <section className="flex flex-col md:flex-row w-full ">
-          <IndexAutoAPI />
-          <IndexQuestion />
-        </section>
-        <div className="border-b border-neutral-800">
-          <IndexPublish />
-        </div>
+        {/* Каждый блок обёрнут — после него будет dashed-линия (скрыта на мобилках) */}
+        <SectionWithDashed>
+          <IndexMain />
+        </SectionWithDashed>
+
+        <SectionWithDashed>
+          <IndexEditor />
+        </SectionWithDashed>
+
+        {/* Секция с двумя компонентами — одна линия появляется ровно на стыке */}
+        <SectionWithDashed>
+          <div className="flex sm:flex-row flex-col">
+            <IndexAutoAPI />
+            <IndexQuestion />
+          </div>
+        </SectionWithDashed>
+
+        <SectionWithDashed isLast centerGap={1280}>
+          <div className="flex">
+            <IndexPublish />
+          </div>
+        </SectionWithDashed>
       </Wrapper>
+
       <div className="flex items-center justify-center h-[720px]">
         <Banner>
           <BannerTitle>Волки используют Aetérna</BannerTitle>

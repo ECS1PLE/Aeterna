@@ -11,7 +11,7 @@ import Sphere from "./Sphere";
 
 const IndexQuestion = () => {
   return (
-    <Container borderTop={false} borderLeft={false} borderBottom={false}>
+    <Container borderTop={true} borderLeft={false} borderBottom={false}>
       <div className="p-11 flex flex-col justify-between h-[514px] md:h-[514px] overflow-hidden relative z-10">
         <h2 className="text-6xl text-white leading-[60px]">
           Готовы
