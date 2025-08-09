@@ -18,6 +18,29 @@ const AutoAPIIllustration = () => {
     }
   }, [inView]);
 
+  useEffect(() => {
+    const anim = lottieRef.current as any;
+    if (!anim) return;
+    const onComplete = () => {
+      try {
+        const lastFrameFromJson = Math.floor((AutoAPI.op ?? 0) - 2);
+        const lastFrame =
+          lastFrameFromJson > 0
+            ? lastFrameFromJson
+            : Math.max(
+                0,
+                Math.floor((anim.getDuration ? anim.getDuration(true) : 0) - 2)
+              );
+        anim.goToAndStop(lastFrame, true);
+      } catch {}
+    };
+    if (anim?.addEventListener) anim.addEventListener("complete", onComplete);
+    return () => {
+      if (anim?.removeEventListener)
+        anim.removeEventListener("complete", onComplete);
+    };
+  }, [lottieRef]);
+
   return (
     <div
       ref={inViewRef}
