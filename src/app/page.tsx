@@ -17,23 +17,23 @@ export default function Home() {
     <>
       <Wrapper>
         {/* Каждый блок обёрнут — после него будет dashed-линия (скрыта на мобилках) */}
-        <SectionWithDashed>
+        <SectionWithDashed isLast centerGap={1280} mtop={-1}>
           <IndexMain />
         </SectionWithDashed>
 
-        <SectionWithDashed>
+        <SectionWithDashed isLast centerGap={1280}>
           <IndexEditor />
         </SectionWithDashed>
 
         {/* Секция с двумя компонентами — одна линия появляется ровно на стыке */}
-        <SectionWithDashed>
+        <SectionWithDashed isLast centerGap={1280}>
           <div className="flex sm:flex-row flex-col">
             <IndexAutoAPI />
             <IndexQuestion />
           </div>
         </SectionWithDashed>
 
-        <SectionWithDashed isLast centerGap={1280}>
+        <SectionWithDashed isLast centerGap={1280} mtop={-1}>
           <div className="flex">
             <IndexPublish />
           </div>

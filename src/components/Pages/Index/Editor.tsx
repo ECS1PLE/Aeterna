@@ -13,7 +13,7 @@ import { PenTool } from "lucide-react";
 
 const IndexEditor = () => {
   return (
-    <Container borderBottom={false} borderTop={true}>
+    <Container borderBottom={false} borderTop={false}>
       <ContainerWrapper>
         <ContainerHeader>
           <ContainerHeaderCategory

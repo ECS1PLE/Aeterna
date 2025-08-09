@@ -10,7 +10,7 @@ import { Rocket } from "lucide-react";
 
 const IndexMain = () => {
   return (
-    <Container borderBottom={false}>
+    <Container borderBottom={true}>
       <main className="flex items-center justify-center h-[720px] relative z-1 overflow-hidden">
         <Banner>
           <BannerTitle>Создавайте продукт не выходя из браузера</BannerTitle>

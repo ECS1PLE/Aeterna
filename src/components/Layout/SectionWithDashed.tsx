@@ -6,6 +6,7 @@ interface SectionWithDashedProps {
   dividerY?: string;
   isLast?: boolean;
   centerGap?: number;
+  mtop?: number;
 }
 
 const SectionWithDashed: React.FC<SectionWithDashedProps> = ({
@@ -14,6 +15,7 @@ const SectionWithDashed: React.FC<SectionWithDashedProps> = ({
   dividerY,
   isLast = false,
   centerGap = 40,
+  mtop = 0,
 }) => {
   const top = dividerY ?? (twoCol ? "50%" : "100%");
   const childrenArray = React.Children.toArray(children);
@@ -74,7 +76,7 @@ const SectionWithDashed: React.FC<SectionWithDashedProps> = ({
                 width: `max(0px, calc(50vw - ${gapHalf}px))`,
                 height: 1,
                 borderTop: "1px dashed #262626",
-                top: "-1px",
+                top: `${mtop}px`,
               }}
             />
             <div
@@ -84,7 +86,7 @@ const SectionWithDashed: React.FC<SectionWithDashedProps> = ({
                 width: `max(0px, calc(50vw - ${gapHalf}px))`,
                 height: 1,
                 borderTop: "1px dashed #262626",
-                top: "-1px",
+                top: `${mtop}px`,
               }}
             />
           </>
