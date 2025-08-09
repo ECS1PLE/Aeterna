@@ -11,7 +11,10 @@ import React from "react";
 
 const IndexEditor = () => {
   return (
-    <Container>
+    <Container
+      borderTop={false}
+      background="linear-gradient(180deg, #0A0A0A 0%, #000000 100%)"
+    >
       <ContainerWrapper>
         <ContainerHeader>
           <ContainerHeaderCategory
@@ -29,19 +32,19 @@ const IndexEditor = () => {
       <div className="relative h-[400px] overflow-hidden">
         <div
           className="
-    absolute 
-    bottom-0
-    left-[30px]
-    h-full 
-    w-[638px]
-    origin-bottom-left
-    scale-[0.77]
+            absolute 
+            bottom-0
+            left-[30px]
+            h-full 
+            w-[638px]
+            origin-bottom-left
+            scale-[0.77]
 
-    sm:left-auto 
-    sm:right-0
-    sm:w-auto
-    sm:scale-100
-  "
+            sm:left-auto 
+            sm:right-0
+            sm:w-auto
+            sm:scale-100
+          "
         >
           <EditorIllustration />
         </div>

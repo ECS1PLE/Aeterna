@@ -11,8 +11,7 @@ import Sphere from "./Sphere";
 
 const IndexQuestion = () => {
   return (
-    <Container>
-      {/* Сделали блок relative для ограничения вложенных absolute элементов */}
+    <Container borderTop={false} borderLeft={false} borderBottom={false}>
       <div className="p-11 flex flex-col justify-between h-[514px] md:h-[514px] overflow-hidden relative z-10">
         <h2 className="text-6xl text-white leading-[60px]">
           Готовы
@@ -25,8 +24,6 @@ const IndexQuestion = () => {
             Начать работу
           </UIButton>
         </div>
-
-        {/* Задний фон — теперь строго внутри блока */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute -left-32 -top-32">
             <Sphere />

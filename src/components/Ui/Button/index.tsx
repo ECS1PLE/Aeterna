@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -17,15 +17,13 @@ const UIButton: React.FC<ButtonProps> = ({
   onClick,
   className = "",
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   function getBackgroundColor() {
-    switch (color) {
-      case "white":
-        return "bg-white";
-      case "transparent":
-        return "bg-transparent";
-      default:
-        return "bg-white";
+    if (isHovered) {
+      return color === "white" ? "bg-white/85" : "bg-white/5";
     }
+    return color === "white" ? "bg-white" : "bg-transparent";
   }
 
   function getTextColor() {
@@ -42,7 +40,9 @@ const UIButton: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`flex gap-2 justify-center items-center py-2 px-5 rounded-full ${getBackgroundColor()} ${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`flex gap-2 justify-center items-center py-2 px-5 rounded-full transition-all duration-300 cursor-pointer ${getBackgroundColor()} ${className}`}
     >
       {icon && <div className={`h-5 w-5 ${getTextColor()}`}>{icon}</div>}
       <span className={`${getTextColor()}`}>{children}</span>

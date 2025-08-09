@@ -40,7 +40,7 @@ const NavItem: React.FC<NavItemProps> = ({
         {showChevron && (
           <ChevronDownIcon
             className={`
-              w-3 h-3 transition-transform duration-400 mt-auto mb-auto
+              w-3 h-3 transition-transform duration-300 mt-auto mb-auto
               ${
                 hovered
                   ? "-rotate-90 text-white"

@@ -9,7 +9,11 @@ import React from "react";
 
 const IndexAutoAPI = () => {
   return (
-    <Container>
+    <Container
+      borderTop={false}
+      borderBottom={false}
+      background="linear-gradient(180deg, #0A0A0A 0%, #000000 100%)"
+    >
       <ContainerWrapper>
         <div className="flex flex-col sm:block h-[450px] sm:h-auto">
           <ContainerHeader>

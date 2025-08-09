@@ -1,10 +1,33 @@
-interface Container {
+interface ContainerProps {
   children: React.ReactNode;
+  borderTop?: boolean;
+  borderLeft?: boolean;
+  borderRight?: boolean;
+  borderBottom?: boolean;
+  background?: string;
 }
 
-const Container: React.FC<Container> = ({ children }) => {
+const Container: React.FC<ContainerProps> = ({
+  children,
+  borderTop = true,
+  borderLeft = true,
+  borderRight = true,
+  borderBottom = true,
+  background,
+}) => {
+  const classes = [
+    "w-full",
+    borderTop ? "border-t" : "",
+    borderLeft ? "border-l" : "",
+    borderRight ? "border-r" : "",
+    borderBottom ? "border-b" : "",
+    "border-solid border-neutral-800",
+  ].join(" ");
+
   return (
-    <section className="w-full border-t border-x border-solid border-neutral-800 relative">
+    <section className={classes} style={{ background }}>
+      {" "}
+      {/* Применяем фон */}
       {children}
     </section>
   );
