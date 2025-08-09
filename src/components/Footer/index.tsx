@@ -7,6 +7,7 @@ import Status from "./Status";
 import FooterBlock from "./FooterBlock";
 import FooterLink from "./FooterLink";
 import Wrapper from "../Layout/Wrapper";
+import Sphere from "./Sphere";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -23,9 +24,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="pt-24 pb-10 border-t border-neutral-700 relative pl-8 md:pl-0">
+    <footer className="pt-[44px] sm:pt-24 pb-10 border-t border-neutral-700 relative pl-8 md:pl-0">
       <div className="absolute top-0 left-0 right-0 mx-auto w-screen">
-        <div className="w-full"></div>
+        <div className="w-full -mt-[85px] sm:mt-0">
+          <Sphere />
+        </div>
       </div>
       <Wrapper>
         <div className="flex flex-col-reverse md:flex-row justify-between gap-10">
