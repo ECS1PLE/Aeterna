@@ -5,10 +5,12 @@ import BannerTitle from "@/components/Banner/Title";
 import Wrapper from "@/components/Layout/Wrapper";
 import UIButton from "@/components/Ui/Button";
 import { Rocket } from "lucide-react";
+import DocumentPage from "@/components/documents";
 
 const document = () => {
   return (
     <Wrapper>
+      <DocumentPage />
       <div className="flex items-center justify-center h-[720px]">
         <Banner>
           <BannerTitle>Волки используют Aetérna</BannerTitle>
