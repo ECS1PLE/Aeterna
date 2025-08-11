@@ -125,7 +125,9 @@ const Header = () => {
             style={{ height: windowHeight }}
           >
             <div className="flex justify-between items-center mb-[48px] h-[40px]">
-              <Logo />
+              <Link href="/" onClick={() => setIsOpen(false)}>
+                <Logo />
+              </Link>
             </div>
 
             <div className="flex-grow overflow-auto">
@@ -150,7 +152,9 @@ const Header = () => {
                   className="text-left w-full text-neutral-300"
                   href="/document"
                   showChevron
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
                 >
                   Документация
                 </NavItem>

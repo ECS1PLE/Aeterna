@@ -16,6 +16,7 @@ const NavItem: React.FC<NavItemProps> = ({
   href,
   showChevron = false,
   children,
+  onClick,
   className = "",
 }) => {
   const [hovered, setHovered] = useState(false);
@@ -28,6 +29,7 @@ const NavItem: React.FC<NavItemProps> = ({
     >
       <Link
         href={href}
+        onClick={onClick}
         className={`
           font-geologica font-normal text-base leading-6 tracking-tight 
           flex items-center gap-1
