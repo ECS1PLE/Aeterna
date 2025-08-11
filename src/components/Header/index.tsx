@@ -7,6 +7,7 @@ import NavItem from "./NavItem";
 import NavList from "./NavList";
 import UIButton from "../Ui/Button";
 import { Rocket, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +58,9 @@ const Header = () => {
     >
       <section className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
         </div>
 
         <div className="hidden md:flex gap-11 items-center">
@@ -77,7 +80,7 @@ const Header = () => {
               Решения
             </NavItem>
             <NavItem
-              href="/"
+              href="/document"
               showChevron={true}
               className="text-neutral-500 px-2"
             >
