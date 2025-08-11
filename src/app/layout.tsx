@@ -28,6 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+      </head>
       <body
         className={`${geologica.variable} ${geistMono.variable} antialiased bg-black`}
       >

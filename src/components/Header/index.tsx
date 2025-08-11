@@ -12,6 +12,18 @@ import Link from "next/link";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+
+    function handleResize() {
+      setWindowHeight(window.innerHeight);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
@@ -35,11 +47,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -65,23 +73,15 @@ const Header = () => {
 
         <div className="hidden md:flex gap-11 items-center">
           <NavList>
-            <NavItem
-              href="/"
-              showChevron={true}
-              className="text-neutral-500 px-2"
-            >
+            <NavItem href="/" showChevron className="text-neutral-500 px-2">
               Продукция
             </NavItem>
-            <NavItem
-              href="/"
-              showChevron={true}
-              className="text-neutral-500 px-2"
-            >
+            <NavItem href="/" showChevron className="text-neutral-500 px-2">
               Решения
             </NavItem>
             <NavItem
               href="/document"
-              showChevron={true}
+              showChevron
               className="text-neutral-500 px-2"
             >
               Документация
@@ -121,18 +121,19 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 h-screen w-screen bg-neutral-800 z-40 flex flex-col p-4 overflow-hidden"
+            className="fixed inset-0 bg-neutral-800 z-40 flex flex-col p-4 overflow-hidden"
+            style={{ height: windowHeight }}
           >
             <div className="flex justify-between items-center mb-[48px] h-[40px]">
               <Logo />
             </div>
 
-            <div className="flex-grow">
+            <div className="flex-grow overflow-auto">
               <NavList className="flex flex-col gap-4 w-full max-w-xs text-left">
                 <NavItem
                   className="text-left w-full text-neutral-300"
                   href="/"
-                  showChevron={true}
+                  showChevron
                   onClick={() => setIsOpen(false)}
                 >
                   Продукция
@@ -140,15 +141,15 @@ const Header = () => {
                 <NavItem
                   className="text-left w-full text-neutral-300"
                   href="/"
-                  showChevron={true}
+                  showChevron
                   onClick={() => setIsOpen(false)}
                 >
                   Решения
                 </NavItem>
                 <NavItem
                   className="text-left w-full text-neutral-300"
-                  href="/"
-                  showChevron={true}
+                  href="/document"
+                  showChevron
                   onClick={() => setIsOpen(false)}
                 >
                   Документация
@@ -164,7 +165,10 @@ const Header = () => {
               </NavList>
             </div>
 
-            <div className="mt-8 mb-[16px] flex flex-col gap-3 w-full max-w-[100%] mx-auto ">
+            <div
+              className="mt-8 flex flex-col gap-3 w-full max-w-[100%] mx-auto"
+              style={{ paddingBottom: 16 }}
+            >
               <UIButton
                 color="transparent"
                 onClick={() => setIsOpen(false)}
