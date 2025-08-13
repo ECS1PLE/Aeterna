@@ -7,6 +7,7 @@ import UIButton from "@/components/Ui/Button";
 import { Rocket } from "lucide-react";
 import HeaderDocumentText from "@/components/documents/header";
 import DocumentText from "@/components/documents/text";
+import BigBrand from "@/components/BigBrand";
 
 const document = () => {
   return (
@@ -88,7 +89,7 @@ const document = () => {
           </DocumentText>
         </div>
       </div>
-      <div className="flex items-center justify-center h-[720px]">
+      <div className="flex items-center justify-center h-[514px] relative">
         <Banner>
           <BannerTitle>Волки используют Aetérna</BannerTitle>
           <BannerText>
@@ -101,6 +102,7 @@ const document = () => {
             </UIButton>
             <UIButton color="transparent">Войти в аккаунт</UIButton>
           </BannerFooter>
+          <BigBrand className="absolute bottom-0 -z-1 w-screen sm:w-[1385px] sm:h-[319px]"></BigBrand>
         </Banner>
       </div>
     </Wrapper>

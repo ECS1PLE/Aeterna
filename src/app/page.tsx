@@ -38,7 +38,7 @@ export default function Home() {
         </SectionWithDashed>
       </Wrapper>
 
-      <div className="flex items-center justify-center h-[720px]">
+      <div className="flex items-center justify-center h-[514px] relative">
         <Banner>
           <BannerTitle>Волки используют Aetérna</BannerTitle>
           <BannerText>
@@ -51,6 +51,7 @@ export default function Home() {
             </UIButton>
             <UIButton color="transparent">Войти в аккаунт</UIButton>
           </BannerFooter>
+          <BigBrand className="absolute bottom-0 -z-1 w-screen sm:w-[1385px] sm:h-[319px]"></BigBrand>
         </Banner>
       </div>
     </>

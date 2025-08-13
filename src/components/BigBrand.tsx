@@ -7,8 +7,6 @@ interface BigBrandProps {
 const BigBrand: React.FC<BigBrandProps> = ({ className }) => {
   return (
     <svg
-      width="1385"
-      height="319"
       viewBox="0 0 1385 319"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
