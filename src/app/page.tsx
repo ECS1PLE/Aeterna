@@ -11,6 +11,7 @@ import UIButton from "@/components/Ui/Button";
 import Banner from "@/components/Banner";
 import BannerFooter from "@/components/Banner/Footer";
 import { Rocket } from "lucide-react";
+import BigBrand from "@/components/BigBrand";
 
 export default function Home() {
   return (
