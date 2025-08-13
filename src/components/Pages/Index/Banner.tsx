@@ -6,7 +6,11 @@ import BigBrand from "@/components/BigBrand";
 import UIButton from "@/components/Ui/Button";
 import { Rocket } from "lucide-react";
 
-const BottomBanner = () => {
+interface BottomBanner {
+  showBottomLogo: boolean;
+}
+
+const BottomBanner = ({ showBottomLogo = true }) => {
   return (
     <div className="flex items-center justify-center h-[514px] relative">
       <Banner>
@@ -21,7 +25,9 @@ const BottomBanner = () => {
           </UIButton>
           <UIButton color="transparent">Войти в аккаунт</UIButton>
         </BannerFooter>
-        <BigBrand className="absolute bottom-0 -z-1 w-screen sm:w-[1385px] sm:h-[319px]" />
+        {showBottomLogo && (
+          <BigBrand className="absolute bottom-0 -z-1 w-screen sm:w-[1385px] sm:h-[319px]" />
+        )}
       </Banner>
     </div>
   );
