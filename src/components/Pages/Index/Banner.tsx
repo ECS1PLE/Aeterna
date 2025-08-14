@@ -10,15 +10,16 @@ import BannerBorder from "@/components/Illustrations/BannerBorder";
 interface BottomBanner {
   showBottomLogo: boolean;
   showBorderSvg:boolean;
-  FirstButtom?: string;
+  FirstButton?: string;
   SecondButton?:string;
-  icon?: React.ReactNode; 
+  icon?: React.ReactElement; 
+  className?:string;
 }
 
-const BottomBanner = ({ showBottomLogo = true, showBorderSvg = false, FirstButton = "Газ", 
-  SecondButton = "Войти в аккаунт", icon=<Rocket /> }) => {
+const BottomBanner:React.FC<BottomBanner> = ({ showBottomLogo = true, showBorderSvg = false, FirstButton = "Газ", 
+  SecondButton = "Войти в аккаунт", icon=<Rocket />, className }) => {
   return (
-    <div className={`flex items-center justify-center h-[514px] relative ${showBorderSvg && ("h-[786px]")}`}>
+    <div className={`flex items-center justify-center h-[514px] relative ${showBorderSvg && ("h-[786px]")} ${className}`}>
       {showBorderSvg && (<BannerBorder className="w-[100%] h-[100%] sm:w-[1280px] sm:h-[auto]" />)}
       <Banner>
         <BannerTitle>Волки используют Aetérna</BannerTitle>

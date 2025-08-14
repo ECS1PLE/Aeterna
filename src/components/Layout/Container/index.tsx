@@ -25,7 +25,7 @@ const Container: React.FC<ContainerProps> = ({
   ].join(" ");
 
   return (
-    <section className={classes} style={{ background }}>
+    <section className={`${classes} relative`} style={{ background }} >
       {" "}
       {/* Применяем фон */}
       {children}
