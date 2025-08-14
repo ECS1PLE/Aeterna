@@ -50,7 +50,7 @@ const UIButton: React.FC<ButtonProps> = ({
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`flex gap-2 justify-center items-center py-2 px-5 rounded-full transition-all duration-300 cursor-pointer ${getBackgroundColor()} ${className}`}
+      className={`flex min-w-[174px] gap-2 justify-center items-center py-2 px-5 rounded-full transition-all duration-300 cursor-pointer ${getBackgroundColor()} ${className}`}
     >
       {icon && (
         <div className={`h-5 w-5 ${getTextColor()}`}>{iconWithSize}</div>
