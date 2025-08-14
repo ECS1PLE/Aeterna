@@ -8,8 +8,8 @@ import { Rocket } from "lucide-react";
 import BannerBorder from "@/components/Illustrations/BannerBorder";
 
 interface BottomBanner {
-  showBottomLogo: boolean;
-  showBorderSvg:boolean;
+  showBottomLogo?: boolean;
+  showBorderSvg?:boolean;
   FirstButton?: string;
   SecondButton?:string;
   icon?: React.ReactElement; 
