@@ -37,7 +37,7 @@ const about = () => {
                     icon={<Layers2 />}
                     text="Интерфейс, к которому все так 
                     привыкли, но с дополнительными возможностями">
-                        <InterfaceIllustration className="absolute bottom-0 right-[20px] sm:w-auto sm:h-auto 
+                        <InterfaceIllustration className="absolute -z-[1] bottom-0 right-[20px] sm:right-[0px] sm:w-auto sm:h-auto 
                         h-[420px] w-full" />
                     </FullBlock>
                 </div>
