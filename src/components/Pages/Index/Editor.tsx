@@ -10,6 +10,7 @@ import { Rocket } from "lucide-react";
 import React from "react";
 import UIButton from "@/components/Ui/Button";
 import { PenTool } from "lucide-react";
+import Link from "next/link";
 
 const IndexEditor = () => {
   return (
@@ -29,15 +30,16 @@ const IndexEditor = () => {
       </ContainerWrapper>
 
       <div className="relative h-[400px] overflow-hidden pl-8 flex flex-col">
-        {" "}
-        {/* Добавлено flex и flex-col */}
-        <UIButton
-          color="white"
-          icon={<PenTool />}
-          className=" mt-0 w-[174px] sm:mt-auto mb-0 sm:mb-[32px] "
-        >
-          О Редакторе
-        </UIButton>
+        <div className="mt-0 w-[174px] sm:mt-auto mb-0 sm:mb-[32px] ">
+          <Link href="/about">
+            <UIButton
+              color="white"
+              icon={<PenTool />}
+            >
+              О Редакторе
+            </UIButton>
+          </Link>
+        </div>
         <div
           className="
             absolute 

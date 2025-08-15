@@ -6,7 +6,6 @@ import PreviewIllustration from "@/components/Illustrations/Preview";
 import CooperationIllustration from "@/components/Illustrations/Cooperation";
 import FullBlock from "@/components/Blocks/FullBlock";
 import InterfaceIllustration from "@/components/Illustrations/Interface";
-import ContainerHeaderTitle from "@/components/Layout/Container/Header/Title";
 import UIButton from "@/components/Ui/Button";
 import TryEditorIllustration from "@/components/Illustrations/TryEditor";
 
