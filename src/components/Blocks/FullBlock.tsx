@@ -36,8 +36,8 @@ const FullBlock: React.FC<FullBlock> = ({
       borderLeft={borderLeft}
       borderRight={borderRight}
     >
-      <ContainerWrapper className="sm:w-[509px] sm:h-full flex flex-col sm:flex-row">
-        <ContainerHeader className="sm:w-[509px] sm:h-[100%] sm:justify-between">
+    <ContainerWrapper className="w-full flex flex-col sm:w-[509px] sm:h-full sm:flex-row">
+        <ContainerHeader className="sm:w-[509px] sm:h-[100%] sm:justify-between flex flex-col gap-[16px]">
           <div>
             <ContainerHeaderCategory icon={icon} text={MainHeaderTitle} />
             <ContainerHeaderTitle className="max-w-[509px]">{text}</ContainerHeaderTitle>

@@ -20,7 +20,7 @@ const BottomBanner:React.FC<BottomBanner> = ({ showBottomLogo = true, showBorder
   SecondButton = "Войти в аккаунт", icon=<Rocket />, className }) => {
   return (
     <div className={`flex items-center justify-center h-[514px] relative ${showBorderSvg && ("h-[786px]")} ${className}`}>
-      {showBorderSvg && (<BannerBorder className="w-[100%] h-[100%] sm:w-[1280px] sm:h-[auto]" />)}
+      {showBorderSvg && (<BannerBorder className="w-screen h-[786px] sm:w-[1280px] sm:h-[auto]" />)}
       <Banner>
         <BannerTitle>Волки используют Aetérna</BannerTitle>
         <BannerText>

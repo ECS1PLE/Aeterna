@@ -4,7 +4,7 @@ interface InterfaceIllustration {
 
 const InterfaceIllustration:React.FC<InterfaceIllustration> = ({className}) => {
     return (
-        <svg width="1280" height="514" 
+        <svg
         className={`${className}`}
         viewBox="0 0 1280 514" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <ellipse opacity="0.1" cx="891.5" cy="468.852" rx="657.5" ry="745.852" fill="url(#paint0_radial_2382_3412)"/>

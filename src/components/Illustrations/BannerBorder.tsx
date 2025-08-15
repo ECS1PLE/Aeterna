@@ -5,7 +5,8 @@ interface BannerBorder {
 const BannerBorder:React.FC<BannerBorder> = ({className}) => {
     return (
         <svg viewBox="0 0 1280 786" fill="none" xmlns="http://www.w3.org/2000/svg"
-        className={`absolute top-0 -z-[1] ${className}`}>
+        className={`absolute top-0 -z-[1] ${className}`}
+        preserveAspectRatio="none">
             <g clip-path="url(#clip0_2150_2761)">
             <rect x="64.5" y="64.5" width="1151" height="657" stroke="#404040"/>
             <path d="M342 532L252 639.5L1160.5 686.5L1033.5 389L1130 86L239.5 246.5L129 120.5" stroke="white" stroke-width="2"/>

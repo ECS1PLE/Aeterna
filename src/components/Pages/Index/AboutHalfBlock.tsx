@@ -32,6 +32,7 @@ const AboutHalfBlock: React.FC<HalfBlock> = ({
       borderBottom={borderBottom}
       borderLeft={borderLeft}
       borderRight={borderRight}
+      className="h-[514px]"
     >
       <ContainerWrapper>
         <ContainerHeader>

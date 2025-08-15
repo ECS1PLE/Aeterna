@@ -5,6 +5,7 @@ interface ContainerProps {
   borderRight?: boolean;
   borderBottom?: boolean;
   background?: string;
+  className?:string;
 }
 
 const Container: React.FC<ContainerProps> = ({
@@ -14,6 +15,7 @@ const Container: React.FC<ContainerProps> = ({
   borderRight = true,
   borderBottom = true,
   background,
+  className,
 }) => {
   const classes = [
     "w-full",
@@ -25,9 +27,7 @@ const Container: React.FC<ContainerProps> = ({
   ].join(" ");
 
   return (
-    <section className={`${classes} relative`} style={{ background }} >
-      {" "}
-      {/* Применяем фон */}
+    <section className={`${classes} ${className} relative`} style={{ background }} >
       {children}
     </section>
   );

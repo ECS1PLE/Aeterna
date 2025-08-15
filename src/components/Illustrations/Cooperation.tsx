@@ -4,7 +4,7 @@ interface CooperationIllustration {
 
 const CooperationIllustration:React.FC<CooperationIllustration> = ({className}) => {
     return (
-        <svg width="401" height="213" 
+        <svg 
         className={`${className}`}
         viewBox="0 0 401 213" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="13.5" y="4.5" width="383" height="205" stroke="#47FF53"/>

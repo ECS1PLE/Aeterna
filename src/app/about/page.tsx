@@ -12,10 +12,10 @@ import TryEditorIllustration from "@/components/Illustrations/TryEditor";
 const about = () => {
     return (
         <>
-            <Wrapper className="gap-16 flex flex-col">
+            <Wrapper className="gap-16 flex flex-col mt-25 sm:mt-0">
                 <BottomBanner showBottomLogo={false} showBorderSvg={true} FirstButton="Войти в редактор" SecondButton=""
                 icon={<Zap />}/>
-                <div className="flex w-[100%] h-[514px]">
+                <div className="flex w-[100%] h-[auto] sm:h-[514px] sm:flex-row flex-col">
                     <AboutHalfBlock text="Создавайте и тестируйте дизайн в реальном времени" 
                     MainHeaderTitle="Превью в реальном времени" icon={<Eye />} 
                     borderLeft={true} borderTop={true} 
@@ -27,7 +27,8 @@ const about = () => {
                     MainHeaderTitle="Работа в команде" icon={<Handshake />}
                     borderTop={true} borderBottom={true} 
                     borderRight={true}>
-                        <CooperationIllustration className="absolute bottom-[42px] right-[42px]"/>
+                        <CooperationIllustration className="absolute sm:bottom-[42px] sm:w-[401px] sm:h-[213px] 
+                        sm:right-[42px] right-[11px] bottom-[11px]"/>
                     </AboutHalfBlock>
                 </div>
                 <div className="w-[100%] h-[514px] flex relative overflow-hidden">
@@ -36,7 +37,7 @@ const about = () => {
                     icon={<Layers2 />}
                     text="Интерфейс, к которому все так 
                     привыкли, но с дополнительными возможностями">
-                        <InterfaceIllustration className="absolute -z-[1] bottom-0"/>
+                        <InterfaceIllustration className="absolute bottom-0 right-[20px] sm:w-auto sm:h-auto h-[220px] w-full" />
                     </FullBlock>
                 </div>
                 <div className="flex flex-col pt-[36px] items-center w-full gap-4">
