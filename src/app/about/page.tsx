@@ -31,13 +31,14 @@ const about = () => {
                         sm:right-[42px] right-[11px] bottom-[11px]"/>
                     </AboutHalfBlock>
                 </div>
-                <div className="w-[100%] h-[514px] flex relative overflow-hidden">
+                <div className="w-[100%] h-[614px] sm:h-[514px] flex relative overflow-hidden">
                     <FullBlock 
                     MainHeaderTitle="Свойства объектов"
                     icon={<Layers2 />}
                     text="Интерфейс, к которому все так 
                     привыкли, но с дополнительными возможностями">
-                        <InterfaceIllustration className="absolute bottom-0 right-[20px] sm:w-auto sm:h-auto h-[220px] w-full" />
+                        <InterfaceIllustration className="absolute bottom-0 right-[20px] sm:w-auto sm:h-auto 
+                        h-[420px] w-full" />
                     </FullBlock>
                 </div>
                 <div className="flex flex-col pt-[36px] items-center w-full gap-4">
