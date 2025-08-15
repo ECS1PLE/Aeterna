@@ -27,7 +27,7 @@ const about = () => {
                     MainHeaderTitle="Работа в команде" icon={<Handshake />}
                     borderTop={true} borderBottom={true} 
                     borderRight={true}>
-                        <CooperationIllustration className="absolute sm:bottom-[42px] sm:w-[401px] sm:h-[213px] 
+                        <CooperationIllustration className="absolute w-[95%] sm:bottom-[42px] sm:w-[401px] sm:h-[213px] 
                         sm:right-[42px] right-[11px] bottom-[11px]"/>
                     </AboutHalfBlock>
                 </div>
