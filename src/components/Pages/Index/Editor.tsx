@@ -31,7 +31,7 @@ const IndexEditor = () => {
 
       <div className="relative h-[400px] overflow-hidden pl-8 flex flex-col">
         <div className="mt-0 w-[174px] sm:mt-auto mb-0 sm:mb-[32px] ">
-          <Link href="/about">
+          <Link href="/editor">
             <UIButton
               color="white"
               icon={<PenTool />}
