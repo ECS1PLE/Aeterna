@@ -9,7 +9,6 @@ const BannerBorder: React.FC<BannerBorder> = ({ className }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`absolute top-0 -z-[1] ${className}`}
-      preserveAspectRatio="none"
     >
       <g clip-path="url(#clip0_2150_2761)">
         <rect x="64.5" y="64.5" width="1151" height="657" stroke="#404040" />
