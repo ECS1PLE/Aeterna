@@ -1,3 +1,5 @@
+"use client";
+
 import BottomBanner from "@/components/Pages/Index/Banner";
 import Wrapper from "@/components/Layout/Wrapper";
 import { Eye, Handshake, Layers2, Zap } from "lucide-react";
@@ -8,8 +10,16 @@ import FullBlock from "@/components/Blocks/FullBlock";
 import InterfaceIllustration from "@/components/Illustrations/Interface";
 import UIButton from "@/components/Ui/Button";
 import TryEditorIllustration from "@/components/Illustrations/TryEditor";
+import { useEffect, useState } from "react";
+import MobileTryEditorIllustration from "@/components/Illustrations/MobileTryEditor";
+import SphereWithCursorIllustration from "@/components/Illustrations/SphereWithCursor";
+import CursorIllustration from "@/components/Illustrations/Cursor";
 
-const editor = () => {
+const Editor = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 640);
+  }, []);
   return (
     <>
       <Wrapper className="flex flex-col mt-25 sm:mt-0">
@@ -31,7 +41,7 @@ const editor = () => {
             borderTop={true}
             borderRight={true}
           >
-            <PreviewIllustration className="absolute bottom-[24px] right-[24px]" />
+            <PreviewIllustration className="absolute bottom-[24px] right-[60px] sm:right-[25px]" />
           </AboutHalfBlock>
 
           <AboutHalfBlock
@@ -43,7 +53,7 @@ const editor = () => {
           >
             <CooperationIllustration
               className="absolute w-[95%] sm:bottom-[42px] sm:w-[401px] sm:h-[213px] 
-                        sm:right-[42px] right-[11px] bottom-[11px]"
+                        sm:right-[42px] -right-[22px] bottom-[44px]"
             />
           </AboutHalfBlock>
         </div>
@@ -53,11 +63,19 @@ const editor = () => {
             icon={<Layers2 />}
             text="Интерфейс, к которому все так 
                     привыкли, но с дополнительными возможностями"
+            className={isMobile ? `justify-between h-[550px]` : ""}
           >
-            <InterfaceIllustration
-              className="absolute -z-[1] bottom-0 right-[20px] sm:right-[0px] sm:w-auto sm:h-auto 
+            {!isMobile ? (
+              <InterfaceIllustration
+                className="absolute -z-[1] bottom-0 right-[20px] sm:right-[0px] sm:w-auto sm:h-auto 
                         h-[420px] w-full"
-            />
+              />
+            ) : (
+              <>
+                <SphereWithCursorIllustration className="absolute right-0 bottom-0" />
+                <CursorIllustration className=" absolute right-[120px] bottom-[140px]" />
+              </>
+            )}
           </FullBlock>
         </div>
         <div className=" mt-16 flex flex-col pt-[36px] items-center w-full gap-4">
@@ -67,7 +85,11 @@ const editor = () => {
           <UIButton color="white" icon={<Zap />}>
             Войти в редактор
           </UIButton>
-          <TryEditorIllustration className="mt-4" />
+          {!isMobile ? (
+            <TryEditorIllustration className="mt-4" />
+          ) : (
+            <MobileTryEditorIllustration className="w-[100%] px-[7px] h-[240px] mt-4" />
+          )}
         </div>
         <BottomBanner />
       </Wrapper>
@@ -75,4 +97,4 @@ const editor = () => {
   );
 };
 
-export default editor;
+export default Editor;

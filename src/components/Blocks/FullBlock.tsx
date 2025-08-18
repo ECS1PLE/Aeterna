@@ -28,6 +28,7 @@ const FullBlock: React.FC<FullBlock> = ({
   borderRight = true,
   children,
   showMenu = true,
+  className,
 }) => {
   return (
     <Container
@@ -36,8 +37,12 @@ const FullBlock: React.FC<FullBlock> = ({
       borderLeft={borderLeft}
       borderRight={borderRight}
     >
-      <ContainerWrapper className="w-full flex flex-col sm:w-[509px] sm:h-full sm:flex-row">
-        <ContainerHeader className="sm:w-[509px] sm:h-[100%] sm:justify-between flex flex-col gap-[16px]">
+      <ContainerWrapper
+        className={`w-full flex flex-col sm:w-[509px] sm:h-full sm:flex-row`}
+      >
+        <ContainerHeader
+          className={`sm:w-[509px] sm:h-[100%] sm:justify-between flex flex-col gap-[16px] ${className}`}
+        >
           <div>
             <ContainerHeaderCategory icon={icon} text={MainHeaderTitle} />
             <ContainerHeaderTitle className="max-w-[509px]">
