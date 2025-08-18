@@ -56,6 +56,7 @@ const Editor = () => {
             icon={<Handshake />}
             borderTop={true}
             borderRight={true}
+            borderLeft={isMobile ? true : false}
           >
             <CooperationIllustration
               className="absolute w-[95%] sm:bottom-[42px] sm:w-[401px] sm:h-[213px] 
