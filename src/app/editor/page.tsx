@@ -80,7 +80,7 @@ const Editor = () => {
             ) : (
               <>
                 <SphereWithCursorIllustration className="absolute right-0 bottom-0" />
-                <CursorIllustration className="absolute right-[120px] bottom-[140px]" />
+                <CursorIllustration className="absolute bottom-[140px] right-[120px]" />
               </>
             )}
           </FullBlock>
