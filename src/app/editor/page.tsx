@@ -79,7 +79,7 @@ const Editor = () => {
               />
             ) : (
               <>
-                <SphereWithCursorIllustration className="absolute right-0 bottom-0" />
+                <SphereWithCursorIllustration className="absolute bottom-0 right-0" />
                 <CursorIllustration className="absolute bottom-[140px] right-[120px]" />
               </>
             )}
