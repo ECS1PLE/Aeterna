@@ -3,6 +3,8 @@ import FaqSubtitle from "@/components/documents/faq/Subtitle";
 import HeaderDocumentText from "@/components/documents/header";
 import DocumentText from "@/components/documents/text";
 import Wrapper from "@/components/Layout/Wrapper";
+import BottomBanner from "@/components/Pages/Index/Banner";
+import { Zap } from "lucide-react";
 
 const Faq = () => {
   return (
@@ -93,6 +95,15 @@ const Faq = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </DocumentText>
         </MainBlockFAQ>
+        <BottomBanner
+          title="Волки используют Aetérna"
+          text="А ты бездарь, до сих пор платишь бездарям фронтендерам за работу. Не будь лохом, и используй наш сервис"
+          showBottomLogo={true}
+          showBorderSvg={false}
+          FirstButton="Войти в редактор"
+          SecondButton="Войти в аккаунт"
+          icon={<Zap />}
+        />
       </Wrapper>
     </>
   );
