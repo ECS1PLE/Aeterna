@@ -87,7 +87,7 @@ const Header = () => {
               Документация
             </NavItem>
             <NavItem
-              href="/"
+              href="/faq"
               showChevron={false}
               className="text-neutral-500 px-2"
             >
