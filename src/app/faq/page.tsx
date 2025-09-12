@@ -1,10 +1,10 @@
-import MainBlockFAQ from "@/components/documents/faq/MainBlockFAQ";
-import FaqSubtitle from "@/components/documents/faq/Subtitle";
+import MainBlockFAQ from "@/components/documents/MainBlockFAQ";
 import HeaderDocumentText from "@/components/documents/header";
 import DocumentText from "@/components/documents/text";
 import Wrapper from "@/components/Layout/Wrapper";
 import BottomBanner from "@/components/Pages/Index/Banner";
 import { Zap } from "lucide-react";
+import FaqSubtitle from "@/components/documents/Subtitle";
 
 const Faq = () => {
   return (
