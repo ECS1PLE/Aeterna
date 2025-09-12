@@ -10,6 +10,7 @@ import { Rocket } from "lucide-react";
 import BannerBorder from "@/components/Illustrations/BannerBorder";
 import { useEffect, useState } from "react";
 import MobileBannerBottomIllustration from "@/components/Illustrations/MobileBannerBottom";
+import Link from "next/link";
 
 interface BottomBanner {
   showBottomLogo?: boolean;
@@ -64,9 +65,11 @@ const BottomBanner: React.FC<BottomBanner> = ({
               {FirstButton}
             </UIButton>
           )}
-          {SecondButton && (
-            <UIButton color="transparent">{SecondButton}</UIButton>
-          )}
+          <Link href="https://aeterna-sso.vercel.app">
+            {SecondButton && (
+              <UIButton color="transparent">{SecondButton}</UIButton>
+            )}
+          </Link>
         </BannerFooter>
         {showBottomLogo && (
           <BigBrand className="absolute bottom-0 -z-1 w-screen sm:w-[1385px] sm:h-[319px]" />

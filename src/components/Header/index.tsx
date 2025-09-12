@@ -97,7 +97,9 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex gap-3">
-          <UIButton color="transparent">Войти в аккаунт</UIButton>
+          <Link href="https://aeterna-sso.vercel.app">
+            <UIButton color="transparent">Войти в аккаунт</UIButton>
+          </Link>
           <UIButton color="white" icon={<Rocket />}>
             Начать работу
           </UIButton>
