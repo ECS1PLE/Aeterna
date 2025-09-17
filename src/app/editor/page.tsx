@@ -38,7 +38,7 @@ const Editor = () => {
           SecondButton=""
           icon={<Zap />}
         />
-        <div className=" mt-16 flex w-[100%] h-[auto] sm:h-[514px] flex-col sm:flex-row">
+        <div className="flex mt-16 w-[100%] h-[auto] sm:h-[514px] flex-col sm:flex-row">
           <AboutHalfBlock
             text="Создавайте и тестируйте дизайн в реальном времени"
             MainHeaderTitle="Превью в реальном времени"
