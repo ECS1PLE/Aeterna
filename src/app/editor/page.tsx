@@ -95,7 +95,7 @@ const Editor = () => {
           {!isMobile ? (
             <TryEditorIllustration className="mt-4" />
           ) : (
-            <MobileTryEditorIllustration className="w-[100%] px-[7px] h-[240px] mt-4" />
+            <MobileTryEditorIllustration className="w-[100%] px-[7px] mt-4 h-[240px]" />
           )}
         </div>
         <BottomBanner />
